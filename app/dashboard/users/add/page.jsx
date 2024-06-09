@@ -14,7 +14,13 @@ const AddUserPage = () => {
           required
         />
         <input type="phone" placeholder="phone" name="phone" />
-        <select name="isAdmin" id="isAdmin">
+
+				<input type="text" placeholder="parentName" name="parentName" required />
+        <input type="text" placeholder="parentEmail" name="parentEmail" required />
+        <input type="text" placeholder="parentPhone" name="parentPhone" required />
+				<input type="text" name="image" id="studentImg" placeholder="img: put URL"/>
+
+        {/* <select name="isAdmin" id="isAdmin">
           <option value={false}>
             Is Admin?
           </option>
@@ -27,7 +33,7 @@ const AddUserPage = () => {
           </option>
           <option value={true}>Yes</option>
           <option value={false}>No</option>
-        </select>
+        </select> */}
         <textarea
           name="address"
           id="address"
