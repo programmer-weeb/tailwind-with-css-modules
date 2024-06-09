@@ -1,4 +1,4 @@
-import { Product, User } from "./models/his-models";
+import { Product, StudentModelSchema, User } from "./models/his-models";
 import { connectToDB } from "./utils";
 
 export const fetchUsers = async (q, page) => {
@@ -18,6 +18,21 @@ export const fetchUsers = async (q, page) => {
     throw new Error("Failed to fetch users!");
   }
 };
+
+export const fetchStudents = async (q, page) => {
+  const regex = new RegExp(q, "i");
+
+  const ITEM_PER_PAGE = 2;
+
+  try {
+    connectToDB();
+    const count = await StudentModelSchema.find({ username: { $regex: regex } }).count();
+    
+   } catch (err) {
+    console.log(err);
+    throw new Error("Failed to fetch students!");
+  }
+}
 
 export const fetchUser = async (id) => {
   console.log(id);
