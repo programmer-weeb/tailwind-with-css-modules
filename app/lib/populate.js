@@ -2,18 +2,40 @@
 import {connectToDB} from "../lib/utils.js";
 import bcrypt from "bcrypt";
 // import {User} from "@/app/lib/models.js";
-import {User} from "./models/his-models.js";
+import {LoginModelSchema, User} from "./models/his-models.js";
 
-addUser({
-  username: "ahmedd",
-  email: "ahmed@b.b",
-  password: "2222",
-  img: '',
-  role: 'admin',
-  phone: "123456789",
-  address: "address",  
+addUserWithLoginSchema({
+  username: "admin",
+  email: "admin@a.b",
+  password: "admin",
+  role: "admin",
 })
+async function addUserWithLoginSchema(userData)  {
+  const { username, email, password, role } = {...userData}
+  try {
+    await connectToDB();
 
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    const newUser = new LoginModelSchema({
+      username,
+      email,
+      password: hashedPassword,
+      role,
+    });
+
+    await newUser.save();
+
+    console.log({
+      newUser
+    })
+  }catch (err) {
+    console.log(err);
+    throw new Error("Failed to create user!");
+  }
+
+}
 async function addUser(userData) {
   const { username, email, password, img, role, phone, address } = {
     ...userData,

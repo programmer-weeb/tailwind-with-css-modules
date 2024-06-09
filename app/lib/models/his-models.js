@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema(
       enum: ['student', 'admin', 'teacher', 'parent'],
       required: true
     },
-  
+
     phone: {
       type: String,
     },
@@ -76,8 +76,37 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+const loginSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+    min: 3,
+    max: 20,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  img: {
+    type: String,
+  },
+  role: {
+    type: String,
+    enum: ['student', 'admin', 'teacher', 'parent'],
+    required: true
+  },
+}, { timestamps: true })
+
 export const User = mongoose.models.User || mongoose.model("User", userSchema);
 // export const User = mongoose.model("User", userSchema);
 export const Product =
   mongoose.models.Product || mongoose.model("Product", productSchema);
 // export const Product = mongoose.model("Product", productSchema);
+
+export const LoginModelSchema = mongoose.models.LoginModelSchema || mongoose.model("LoginModelSchema", loginSchema)
