@@ -1,27 +1,44 @@
-import { addProduct } from "@/app/lib/actions";
+import { addProduct, addTeacher } from "@/app/lib/actions";
 import styles from "@/app/ui/dashboard/products/addProduct/addProduct.module.css";
 
-const AddProductPage = () => {
+const AddTeacherPage = () => {
   return (
     <div className={styles.container}>
-      <form action={addProduct} className={styles.form}>
-        <input type="text" placeholder="title" name="title" required />
-        <select name="cat" id="cat">
-          <option value="general">Choose a Category</option>
-          <option value="kitchen">Kitchen</option>
-          <option value="phone">Phone</option>
-          <option value="computer">Computer</option>
-        </select>
-        <input type="number" placeholder="price" name="price" required />
-        <input type="number" placeholder="stock" name="stock" required />
-        <input type="text" placeholder="color" name="color" />
-        <input type="text" placeholder="size" name="size" />
-        <textarea
+      <form action={addTeacher} className={styles.form}>
+				<input type="text" placeholder="username" name="username" required />
+        <input type="email" placeholder="email" name="email" required />
+        <input
+          type="password"
+          placeholder="password"
+          name="password"
           required
-          name="desc"
-          id="desc"
-          rows="16"
-          placeholder="Description"
+        />
+        <input type="phone" placeholder="phone" name="phone" />
+        <input type="text" placeholder="subject" name="subject" />
+
+				<textarea
+          name="qualification"
+          id="qualification"
+          rows="4"
+          placeholder="Qualification"
+        ></textarea>
+				<textarea
+          name="experience"
+          id="experience"
+          rows="4"
+          placeholder="Experience"
+        ></textarea>
+				<textarea
+          name="about"
+          id="about"
+          rows="4"
+          placeholder="About"
+        ></textarea>
+				<textarea
+          name="address"
+          id="address"
+          rows="4"
+          placeholder="Address"
         ></textarea>
         <button type="submit">Submit</button>
       </form>
@@ -29,4 +46,4 @@ const AddProductPage = () => {
   );
 };
 
-export default AddProductPage;
+export default AddTeacherPage;

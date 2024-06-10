@@ -33,11 +33,11 @@ const StudentDetails = ({ params }) => {
 			<header className="w-full flex justify-between items-center mb-10">
 				<h2 className="text-3xl font-semibold text-white">Student Details</h2>
 				<div className="flex items-center space-x-4">
-					<input
+					{/* <input
 						type="text"
 						placeholder="Search here..."
 						className="p-2 rounded bg-gray-800 text-gray-300"
-					/>
+					/> */}
 					<div className="flex items-center space-x-2">
 						<button className="p-2 bg-gray-800 rounded">🔔</button>
 						<div className="p-2 bg-gray-800 rounded flex items-center space-x-2">

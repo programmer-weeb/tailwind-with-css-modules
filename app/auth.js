@@ -2,13 +2,14 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { authConfig } from "./authconfig";
 import { connectToDB } from "./lib/utils";
-import { User } from "./lib/models/his-models";
+import { LoginModelSchema, User } from "./lib/models/his-models";
 import bcrypt from "bcrypt";
 
 const login = async (credentials) => {
   try {
     connectToDB();
-    const user = await User.findOne({ username: credentials.username });
+    // const user = await User.findOne({ username: credentials.username });
+    const user = await LoginModelSchema.findOne({ username: credentials.username });
 
     // if (!user || !user.isAdmin) throw new Error("Wrong credentials!");
 
@@ -18,6 +19,8 @@ const login = async (credentials) => {
     );
 
     if (!isPasswordCorrect) throw new Error("Wrong credentials!");
+
+    console.log('logged in user:', user)
 
     return user;
   } catch (err) {
