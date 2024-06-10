@@ -8,7 +8,7 @@ import bcrypt from "bcrypt";
 import { signIn } from "../auth";
 import { TeacherModelSchema } from "./models/teacher-model";
 
-export const addUser = async (formData) => {
+export const addStudent = async (formData) => {
   const { username, email, password, phone, address, parentName, parentEmail, parentPhone, image } =
     Object.fromEntries(formData);
   // const { username, email, password, phone, address, isAdmin, isActive } =
@@ -64,6 +64,39 @@ export const updateUser = async (formData) => {
 
   revalidatePath("/dashboard/students");
   redirect("/dashboard/students");
+};
+export const updateStudent = async (formData) => {
+  const { id, username, email, password, phone, address, parentName, parentEmail, parentPhone, image } =
+    Object.fromEntries(formData);
+
+  try {
+    connectToDB();
+
+    const updateFields = {
+      username,
+      email,
+      password,
+      phone,
+      address,
+      parentName,
+      parentEmail,
+      parentPhone,
+      img: image
+    };
+
+    Object.keys(updateFields).forEach(
+      (key) =>
+        (updateFields[key] === "" || undefined) && delete updateFields[key]
+    );
+
+    await StudentModelSchema.findByIdAndUpdate(id, updateFields);
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to update user!");
+  }
+
+  revalidatePath(`/dashboard/students/edit/${id}`);
+  redirect(`/dashboard/students/edit/${id}`);
 };
 
 export const addProduct = async (formData) => {

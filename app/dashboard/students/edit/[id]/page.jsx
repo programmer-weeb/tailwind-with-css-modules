@@ -1,44 +1,40 @@
-import { updateUser } from "@/app/lib/actions";
-import { fetchUser } from "@/app/lib/data";
+import { updateStudent, updateUser } from "@/app/lib/actions";
+import { fetchStudent, fetchUser } from "@/app/lib/data";
 import styles from "@/app/ui/dashboard/users/singleUser/singleUser.module.css";
 import Image from "next/image";
 
-const SingleUserPage = async ({ params }) => {
+const SingleStudentPage = async ({ params }) => {
   
   const { id } = params;
-  const user = await fetchUser(id);
+  const student = await fetchStudent(id);
 
   return (
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.imgContainer}>
-          <Image src={user.img || "/noavatar.png"} alt="" fill />
+          <Image src={student.img || "/noavatar.png"} alt="" fill />
         </div>
-        {user.username}
+        {student.username}
       </div>
       <div className={styles.formContainer}>
-        <form action={updateUser} className={styles.form}>
-          <input type="hidden" name="id" value={user.id}/>
+        <form action={updateStudent} className={styles.form}>
+          <input type="hidden" name="id" value={student.id}/>
           <label>Username</label>
-          <input type="text" name="username" placeholder={user.username} />
+          <input type="text" name="username" placeholder={student.username} />
           <label>Email</label>
-          <input type="email" name="email" placeholder={user.email} />
+          <input type="email" name="email" placeholder={student.email} />
           <label>Password</label>
           <input type="password" name="password" />
           <label>Phone</label>
-          <input type="text" name="phone" placeholder={user.phone} />
-          <label>Address</label>
-          <textarea type="text" name="address" placeholder={user.address} />
-          <label>Is Admin?</label>
-          <select name="isAdmin" id="isAdmin">
-            <option value={true} selected={user.isAdmin}>Yes</option>
-            <option value={false} selected={!user.isAdmin}>No</option>
-          </select>
-          <label>Is Active?</label>
-          <select name="isActive" id="isActive">
-            <option value={true} selected={user.isActive}>Yes</option>
-            <option value={false} selected={!user.isActive}>No</option>
-          </select>
+          <input type="text" name="phone" placeholder={student.phone} />
+
+					<label>Parent Name</label>
+					<input type="text" name="parentName" placeholder={student.parentName} />
+					<label>Parent Email</label>
+					<input type="text" name="parentEmail" placeholder={student.parentEmail} />
+					<label>Parent Phone</label>
+					<input type="text" name="parentPhone" placeholder={student.parentPhone} />
+
           <button>Update</button>
         </form>
       </div>
@@ -46,4 +42,4 @@ const SingleUserPage = async ({ params }) => {
   );
 };
 
-export default SingleUserPage;
+export default SingleStudentPage;

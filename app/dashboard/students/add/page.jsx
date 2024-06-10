@@ -1,10 +1,10 @@
-import { addUser } from "@/app/lib/actions";
+import { addStudent } from "@/app/lib/actions";
 import styles from "@/app/ui/dashboard/users/addUser/addUser.module.css";
 
-const AddUserPage = () => {
+const AddStudentPage = () => {
   return (
     <div className={styles.container}>
-      <form action={addUser} className={styles.form}>
+      <form action={addStudent} className={styles.form}>
         <input type="text" placeholder="username" name="username" required />
         <input type="email" placeholder="email" name="email" required />
         <input
@@ -20,20 +20,6 @@ const AddUserPage = () => {
         <input type="text" placeholder="parentPhone" name="parentPhone" required />
 				<input type="text" name="image" id="studentImg" placeholder="img: put URL"/>
 
-        {/* <select name="isAdmin" id="isAdmin">
-          <option value={false}>
-            Is Admin?
-          </option>
-          <option value={true}>Yes</option>
-          <option value={false}>No</option>
-        </select>
-        <select name="isActive" id="isActive">
-          <option value={true}>
-            Is Active?
-          </option>
-          <option value={true}>Yes</option>
-          <option value={false}>No</option>
-        </select> */}
         <textarea
           name="address"
           id="address"
@@ -46,4 +32,4 @@ const AddUserPage = () => {
   );
 };
 
-export default AddUserPage;
+export default AddStudentPage;
