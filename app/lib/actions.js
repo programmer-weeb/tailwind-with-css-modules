@@ -163,6 +163,30 @@ export const deleteProduct = async (formData) => {
 
   revalidatePath("/dashboard/products");
 };
+
+export const addTeacher = async (formData) => {
+  const { username, email, password, phone, subject, qualification, about, address, experience } = Object.fromEntries(formData);
+
+  try {
+    connectToDB();
+
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    const newTeacher = new TeacherModelSchema({
+      username, email, password: hashedPassword, phone, subject, qualification, about, address, experience
+    });
+
+    await newTeacher.save();
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to create teacher!");
+  }
+
+  revalidatePath("/dashboard/products");
+  redirect("/dashboard/products");
+
+}
 export const deleteTeacher = async (formData) => {
   const { id } = Object.fromEntries(formData);
 
