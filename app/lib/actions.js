@@ -88,8 +88,8 @@ export const addProduct = async (formData) => {
     throw new Error("Failed to create product!");
   }
 
-  revalidatePath("/dashboard/products");
-  redirect("/dashboard/products");
+  revalidatePath("/dashboard/teachers");
+  redirect("/dashboard/teachers");
 };
 
 export const updateProduct = async (formData) => {
@@ -119,8 +119,8 @@ export const updateProduct = async (formData) => {
     throw new Error("Failed to update product!");
   }
 
-  revalidatePath("/dashboard/products");
-  redirect("/dashboard/products");
+  revalidatePath("/dashboard/teachers");
+  redirect("/dashboard/teachers");
 };
 
 export const deleteUser = async (formData) => {
@@ -134,7 +134,7 @@ export const deleteUser = async (formData) => {
     throw new Error("Failed to delete user!");
   }
 
-  revalidatePath("/dashboard/products");
+  revalidatePath("/dashboard/teachers");
 };
 export const deleteStudent = async (formData) => {
   const { id } = Object.fromEntries(formData);
@@ -161,7 +161,7 @@ export const deleteProduct = async (formData) => {
     throw new Error("Failed to delete product!");
   }
 
-  revalidatePath("/dashboard/products");
+  revalidatePath("/dashboard/teachers");
 };
 
 export const addTeacher = async (formData) => {
@@ -183,8 +183,8 @@ export const addTeacher = async (formData) => {
     throw new Error("Failed to create teacher!");
   }
 
-  revalidatePath("/dashboard/products");
-  redirect("/dashboard/products");
+  revalidatePath("/dashboard/teachers");
+  redirect("/dashboard/teachers");
 
 }
 export const deleteTeacher = async (formData) => {
@@ -198,7 +198,7 @@ export const deleteTeacher = async (formData) => {
     throw new Error("Failed to delete product!");
   }
 
-  revalidatePath("/dashboard/products");
+  revalidatePath("/dashboard/teachers");
 };
 
 export const authenticate = async (prevState, formData) => {

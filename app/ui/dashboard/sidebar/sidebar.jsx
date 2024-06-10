@@ -54,7 +54,7 @@ const adminMenuItems = [
       },
       {
         title: "Teachers",
-        path: "/dashboard/products",
+        path: "/dashboard/teachers",
         icon: <MdShoppingBag />,
       },
       {
