@@ -32,10 +32,30 @@ const sideBtns = [
 		path: "/dashboard/teachers",
 		icon: <MdShoppingBag />,
 	},
+	// {
+	// 	title: "Settings",
+	// 	path: "/dashboard/settings",
+	// 	icon: <MdOutlineSettings />,
+	// },
 	{
-		title: "Settings",
-		path: "/dashboard/settings",
-		icon: <MdOutlineSettings />,
+		title: "Exams",
+		path: "/dashboard/exams",
+		icon: <MdAttachMoney />,
+	},
+	{
+		title: "Assignments",
+		path: "/dashboard/assignments",
+		icon: <MdAttachMoney />,
+	},
+	{
+		title: "Subjects",
+		path: "/dashboard/subjects",
+		icon: <MdAttachMoney />,
+	},
+	{
+		title: "Events",
+		path: "/dashboard/events",
+		icon: <MdAttachMoney />,
 	},
 ]
 const adminMenuItems = [
