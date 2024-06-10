@@ -3,13 +3,14 @@ import Link from "next/link";
 import styles from "@/app/ui/dashboard/products/products.module.css";
 import Search from "@/app/ui/dashboard/search/search";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
-import { fetchProducts } from "@/app/lib/data";
-import { deleteProduct } from "@/app/lib/actions";
+import { fetchProducts, fetchTeacher } from "@/app/lib/data";
+import { deleteProduct, deleteTeacher } from "@/app/lib/actions";
 
 const ProductsPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
   const page = searchParams?.page || 1;
-  const { count, products } = await fetchProducts(q, page);
+  // const { count, products } = await fetchProducts(q, page);
+  const { count, teachers } = await fetchTeacher(q, page);
 
   return (
     <div className={styles.container}>
@@ -22,42 +23,48 @@ const ProductsPage = async ({ searchParams }) => {
       <table className={styles.table}>
         <thead>
           <tr>
-            <td>Title</td>
+            {/* <td>Title</td>
             <td>Description</td>
             <td>Price</td>
             <td>Created At</td>
             <td>Stock</td>
+            <td>Action</td> */}
+						<td>Name</td>
+            <td>Email</td>
+            <td>Created At</td>
+            {/* <td>Role</td>
+            <td>Status</td> */}
             <td>Action</td>
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => (
-            <tr key={product.id}>
+          {teachers.map((teacher) => (
+            <tr key={teacher.id}>
               <td>
                 <div className={styles.product}>
                   <Image
-                    src={product.img || "/noproduct.jpg"}
+                    src={teacher.img || "/noproduct.jpg"}
                     alt=""
                     width={40}
                     height={40}
                     className={styles.productImage}
                   />
-                  {product.title}
+                  {teacher.username}
                 </div>
               </td>
-              <td>{product.desc}</td>
-              <td>${product.price}</td>
-              <td>{product.createdAt?.toString().slice(4, 16)}</td>
-              <td>{product.stock}</td>
+              <td>{teacher.email}</td>
+              {/* <td>${teacher.price}</td> */}
+              <td>{teacher.createdAt?.toString().slice(4, 16)}</td>
+              {/* <td>{teacher.stock}</td> */}
               <td>
                 <div className={styles.buttons}>
-                  <Link href={`/dashboard/products/${product.id}`}>
+                  <Link href={`/dashboard/products/${teacher.id}`}>
                     <button className={`${styles.button} ${styles.view}`}>
                       View
                     </button>
                   </Link>
-                  <form action={deleteProduct}>
-                    <input type="hidden" name="id" value={product.id} />
+                  <form action={deleteTeacher}>
+                    <input type="hidden" name="id" value={teacher.id} />
                     <button className={`${styles.button} ${styles.delete}`}>
                       Delete
                     </button>

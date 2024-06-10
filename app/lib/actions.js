@@ -6,6 +6,7 @@ import { connectToDB } from "./utils";
 import { redirect } from "next/navigation";
 import bcrypt from "bcrypt";
 import { signIn } from "../auth";
+import { TeacherModelSchema } from "./models/teacher-model";
 
 export const addUser = async (formData) => {
   const { username, email, password, phone, address, parentName, parentEmail, parentPhone, image } =
@@ -155,6 +156,19 @@ export const deleteProduct = async (formData) => {
   try {
     connectToDB();
     await Product.findByIdAndDelete(id);
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to delete product!");
+  }
+
+  revalidatePath("/dashboard/products");
+};
+export const deleteTeacher = async (formData) => {
+  const { id } = Object.fromEntries(formData);
+
+  try {
+    connectToDB();
+    await TeacherModelSchema.findByIdAndDelete(id);
   } catch (err) {
     console.log(err);
     throw new Error("Failed to delete product!");
