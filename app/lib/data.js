@@ -51,6 +51,17 @@ export const fetchStudent = async (id) => {
     throw new Error("Failed to fetch user!");
   }
 };
+export const fetchTeacher = async (id) => {
+  console.log(id);
+  try {
+    connectToDB();
+    const teacher = await TeacherModelSchema.findById(id);
+    return teacher;
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to fetch user!");
+  }
+};
 
 export const fetchProducts = async (q, page) => {
   console.log(q);
@@ -70,16 +81,25 @@ export const fetchProducts = async (q, page) => {
     throw new Error("Failed to fetch products!");
   }
 };
-export const fetchTeacher = async (q, page) => {
+export const fetchTeachers = async (q, page) => {
+
+  const regex = new RegExp(q, "i");
+
+  const ITEM_PER_PAGE = 10;
+
   try {
     connectToDB();
-    const teacher = await TeacherModelSchema.findById(id);
-    return teacher;
+    const count = await TeacherModelSchema.find({ username: { $regex: regex } }).count();
+    const teachers = await TeacherModelSchema.find({ username: { $regex: regex } })
+      .limit(ITEM_PER_PAGE)
+      .skip(ITEM_PER_PAGE * (page - 1));
+    return { count, teachers };
   } catch (err) {
     console.log(err);
-    throw new Error("Failed to fetch teacher!");
+    throw new Error("Failed to fetch users!");
   }
-};
+
+}
 
 export const fetchProduct = async (id) => {
   try {

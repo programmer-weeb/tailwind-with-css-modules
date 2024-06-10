@@ -98,6 +98,33 @@ export const updateStudent = async (formData) => {
   revalidatePath(`/dashboard/students/edit/${id}`);
   redirect(`/dashboard/students/edit/${id}`);
 };
+export const updateTeacher = async (formData) => {
+  const { id, username, email, password, phone, subject, qualification, about, address, experience } = Object.fromEntries(formData);
+
+  try {
+    connectToDB()
+    const updateFields = {
+      username,
+      email,
+      password,
+      phone,
+      subject,
+      qualification,
+      about,
+      address,
+      experience
+    }
+
+    Object.keys(updateFields).forEach(
+      (key) =>
+        (updateFields[key] === "" || undefined) && delete updateFields[key]
+    );
+
+    await TeacherModelSchema.findByIdAndUpdate(id, updateFields);
+  } catch (error) {
+    
+  }
+};
 
 export const addProduct = async (formData) => {
   const { title, desc, price, stock, color, size } =
