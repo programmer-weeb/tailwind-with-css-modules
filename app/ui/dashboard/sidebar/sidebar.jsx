@@ -16,9 +16,31 @@ import {
 } from "react-icons/md";
 import { auth, signOut } from "@/app/auth";
 
+const sideBtns = [
+	{
+		title: "Dashboard",
+		path: "/dashboard",
+		icon: <MdDashboard />,
+	},
+	{
+		title: "Students",
+		path: "/dashboard/users",
+		icon: <MdSupervisedUserCircle />,
+	},
+	{
+		title: "Teachers",
+		path: "/dashboard/products",
+		icon: <MdShoppingBag />,
+	},
+	{
+		title: "Settings",
+		path: "/dashboard/settings",
+		icon: <MdOutlineSettings />,
+	},
+]
 const adminMenuItems = [
   {
-    title: "Pages",
+    // title: "Pages",
     list: [
       {
         title: "Dashboard",
@@ -63,7 +85,7 @@ const adminMenuItems = [
   //   ],
   // },
   {
-    title: "User",
+    // title: "User",
     list: [
       {
         title: "Settings",
@@ -81,8 +103,7 @@ const adminMenuItems = [
 
 const Sidebar = async () => {
   const { user } = await auth();
-	console.log({user})
-	console.log({role: user.role})
+	const role = user.role
   return (
     <div className={styles.container}>
 			{/* <div>{JSON.stringify({user})}</div> */}
@@ -100,14 +121,11 @@ const Sidebar = async () => {
         </div>
       </div>
       <ul className={styles.list}>
-        {adminMenuItems.map((cat) => (
-          <li key={cat.title}>
-            {/* <span className={styles.cat}>{cat.title}</span> */}
-            {cat.list.map((item) => (
-              <MenuLink item={item} key={item.title} />
-            ))}
-          </li>
-        ))}
+				{sideBtns.map(e => (
+					<li key={e.title}>
+						<MenuLink item={e} key={e.title} />
+					</li>
+				))}        
       </ul>
       <form
         action={async () => {
