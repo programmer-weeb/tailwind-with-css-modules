@@ -29,7 +29,7 @@ const sideBtns = [
 	},
 	{
 		title: "Teachers",
-		path: "/dashboard/products",
+		path: "/dashboard/teachers",
 		icon: <MdShoppingBag />,
 	},
 	{
