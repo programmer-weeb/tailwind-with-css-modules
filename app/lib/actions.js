@@ -30,8 +30,8 @@ export const addUser = async (formData) => {
     throw new Error("Failed to create user!");
   }
 
-  revalidatePath("/dashboard/users");
-  redirect("/dashboard/users");
+  revalidatePath("/dashboard/students");
+  redirect("/dashboard/students");
 };
 
 export const updateUser = async (formData) => {
@@ -62,8 +62,8 @@ export const updateUser = async (formData) => {
     throw new Error("Failed to update user!");
   }
 
-  revalidatePath("/dashboard/users");
-  redirect("/dashboard/users");
+  revalidatePath("/dashboard/students");
+  redirect("/dashboard/students");
 };
 
 export const addProduct = async (formData) => {
@@ -147,7 +147,7 @@ export const deleteStudent = async (formData) => {
     throw new Error("Failed to delete user!");
   }
 
-  revalidatePath("/dashboard/users");
+  revalidatePath("/dashboard/students");
 };
 
 export const deleteProduct = async (formData) => {

@@ -24,7 +24,7 @@ const sideBtns = [
 	},
 	{
 		title: "Students",
-		path: "/dashboard/users",
+		path: "/dashboard/students",
 		icon: <MdSupervisedUserCircle />,
 	},
 	{
@@ -49,7 +49,7 @@ const adminMenuItems = [
       },
       {
         title: "Students",
-        path: "/dashboard/users",
+        path: "/dashboard/students",
         icon: <MdSupervisedUserCircle />,
       },
       {
