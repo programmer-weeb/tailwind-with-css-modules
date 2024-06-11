@@ -12,18 +12,18 @@ const StudentDetails = ({ currentStudent }) => {
 
   const renderContent = () => {
     switch (activeTab) {
-      case "general":
-        return <div>General Content</div>;
-      case "quiz":
-        return <div>Quiz Content</div>;
+      // case "general":
+      //   return <div>General Content</div>;
+      // case "quiz":
+      //   return <div>Quiz Content</div>;
       case "exam":
         return <div><ExamsComponent /></div>;
       case "assignment":
         return <div><AssignmentsPage /></div>;
       case "classes":
         return <div><ClassesOrSubjects/></div>;
-      case "medicalRecords":
-        return <div>Medical Records Content</div>;
+      // case "medicalRecords":
+      //   return <div>Medical Records Content</div>;
       case "busLocation":
         return (<BusLocation />);
       default:
@@ -153,7 +153,7 @@ const StudentDetails = ({ currentStudent }) => {
       {/* new bottom buttons */}
       <div>
         <div className="flex justify-around my-4 ml-0 mr-60">
-          <button
+          {/* <button
             onClick={() => setActiveTab("general")}
             className={`p-2 border rounded ${
               activeTab === "general"
@@ -162,8 +162,8 @@ const StudentDetails = ({ currentStudent }) => {
             }`}
           >
             General
-          </button>
-          <button
+          </button> */}
+          {/* <button
             onClick={() => setActiveTab("quiz")}
             className={`p-2 border rounded ${
               activeTab === "quiz"
@@ -172,7 +172,7 @@ const StudentDetails = ({ currentStudent }) => {
             }`}
           >
             Quiz
-          </button>
+          </button> */}
           <button
             onClick={() => setActiveTab("exam")}
             className={`p-2 border rounded ${
@@ -203,7 +203,7 @@ const StudentDetails = ({ currentStudent }) => {
           >
             Classes
           </button>
-          <button
+          {/* <button
             onClick={() => setActiveTab("medicalRecords")}
             className={`p-2 border rounded ${
               activeTab === "medicalRecords"
@@ -212,7 +212,7 @@ const StudentDetails = ({ currentStudent }) => {
             }`}
           >
             Medical Records
-          </button>
+          </button> */}
           <button
             onClick={() => setActiveTab("busLocation")}
             className={`p-2 border rounded ${
