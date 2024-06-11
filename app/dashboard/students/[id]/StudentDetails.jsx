@@ -4,9 +4,11 @@ import React, { useState } from "react";
 import Link from "next/link";
 import BusLocation from "../../../ui/student-details-stuff/BusLocation.jsx";
 import ExamsComponent from "../../../ui/student-details-stuff/ExamsComponent.jsx";
+import AssignmentsPage from "../../../ui/student-details-stuff/AssignmentsPage.jsx";
+import ClassesOrSubjects from "../../../ui/student-details-stuff/ClassesOrSubjects.jsx";
 const StudentDetails = ({ currentStudent }) => {
 
-  const [activeTab, setActiveTab] = useState("general");
+  const [activeTab, setActiveTab] = useState("assignment");
 
   const renderContent = () => {
     switch (activeTab) {
@@ -17,9 +19,9 @@ const StudentDetails = ({ currentStudent }) => {
       case "exam":
         return <div><ExamsComponent /></div>;
       case "assignment":
-        return <div>Assignment Content</div>;
+        return <div><AssignmentsPage /></div>;
       case "classes":
-        return <div>Classes Content</div>;
+        return <div><ClassesOrSubjects/></div>;
       case "medicalRecords":
         return <div>Medical Records Content</div>;
       case "busLocation":
