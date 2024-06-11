@@ -66,7 +66,7 @@ export const updateUser = async (formData) => {
   redirect("/dashboard/students");
 };
 export const updateStudent = async (formData) => {
-  const { id, username, email, password, phone, address, parentName, parentEmail, parentPhone, image } =
+  const { id, username, email, password, phone, address, parentName, parentEmail, parentPhone, image, medicalRecords } =
     Object.fromEntries(formData);
 
   try {
@@ -81,7 +81,8 @@ export const updateStudent = async (formData) => {
       parentName,
       parentEmail,
       parentPhone,
-      img: image
+      img: image,
+      medicalRecords
     };
 
     Object.keys(updateFields).forEach(
