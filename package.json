@@ -17,6 +17,7 @@
     "@fullcalendar/interaction": "^6.1.14",
     "@fullcalendar/react": "^6.1.14",
     "@fullcalendar/timegrid": "^6.1.14",
+    "@googlemaps/js-api-loader": "^1.16.6",
     "@mui/material": "^5.15.19",
     "bcrypt": "^5.1.1",
     "mongoose": "^8.4.1",
