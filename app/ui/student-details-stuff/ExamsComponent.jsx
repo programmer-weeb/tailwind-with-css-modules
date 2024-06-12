@@ -1,6 +1,6 @@
 import Head from "next/head.js";
 
-export default function ExamsComponent() {
+export default function ExamsComponent({ role }) {
 	const exams = [
 		{
 			id: 1,
@@ -66,7 +66,12 @@ export default function ExamsComponent() {
 				<title>Exams | School Management System</title>
 			</Head>
 			<div className="container mx-auto p-4">
-				<h1 className="text-2xl font-bold mb-4">Upcoming Exams</h1>
+				<div className="flex justify-between items-center mb-4">
+					<h1 className="text-2xl font-bold">Upcoming Exams</h1>
+					{role === 'teacher' && <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
+						Add Exam
+					</button>}
+				</div>
 				<div className="grid gap-4 md:grid-cols-2">
 					{exams.map((exam) => (
 						<div key={exam.id} className="p-4 border rounded shadow">
@@ -91,6 +96,7 @@ export default function ExamsComponent() {
 				</div>
 			</div>
 		</div>
+
 	);
 
 }

@@ -6,7 +6,7 @@ import BusLocation from "../../../ui/student-details-stuff/BusLocation.jsx";
 import ExamsComponent from "../../../ui/student-details-stuff/ExamsComponent.jsx";
 import AssignmentsPage from "../../../ui/student-details-stuff/AssignmentsPage.jsx";
 import ClassesOrSubjects from "../../../ui/student-details-stuff/ClassesOrSubjects.jsx";
-const StudentDetails = ({ currentStudent }) => {
+const StudentDetails = ({ currentStudent, role }) => {
 
   const [activeTab, setActiveTab] = useState("assignment");
 
@@ -17,7 +17,7 @@ const StudentDetails = ({ currentStudent }) => {
       // case "quiz":
       //   return <div>Quiz Content</div>;
       case "exam":
-        return <div><ExamsComponent /></div>;
+        return <div><ExamsComponent role={role}/></div>;
       case "assignment":
         return <div><AssignmentsPage /></div>;
       case "classes":
