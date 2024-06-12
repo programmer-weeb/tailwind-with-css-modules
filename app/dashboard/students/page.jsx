@@ -5,27 +5,31 @@ import Search from "@/app/ui/dashboard/search/search";
 import styles from "@/app/ui/dashboard/users/users.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import {auth} from "../../auth.js";
 
-const UsersPage = async ({ searchParams }) => {
+const StudentsPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
   const page = searchParams?.page || 1;
   // const { count, users } = await fetchUsers(q, page);
   const { count, users } = await fetchStudents(q, page);
 
+  const { user } = await auth();
+  const role = user.role
+
   return (
     <div className={styles.container}>
       <div className={styles.top}>
         <Search placeholder="Search for a user..." />
-        <Link href="/dashboard/students/add">
+        {role === 'admin' && <Link href="/dashboard/students/add">
           <button className={styles.addButton}>Add New</button>
-        </Link>
+        </Link>}
       </div>
       <table className={styles.table}>
         <thead>
           <tr>
             <td>Name</td>
             <td>Email</td>
-            <td>Created At</td>
+            {role === 'admin' &&<td>Created At</td>}
             {/* <td>Role</td>
             <td>Status</td> */}
             <td>Action</td>
@@ -47,36 +51,49 @@ const UsersPage = async ({ searchParams }) => {
                 </div>
               </td>
               <td>{user.email}</td>
-              <td>{user.createdAt?.toString().slice(4, 16)}</td>
+              {role === 'admin' &&<td>{user.createdAt?.toString().slice(4, 16)}</td>}
               {/* <td>{user.isAdmin ? "Admin" : "Client"}</td> */}
               {/* <td>{user.isActive ? "active" : "passive"}</td> */}
               <td>
                 <div className={styles.buttons}>
-                  <Link href={`/dashboard/students/edit/${user.id}`}>
+                  {role === 'admin' && <Link href={`/dashboard/students/edit/${user.id}`}>
                     <button className={`${styles.button} ${styles.view}`}>
                       Edit
                     </button>
-                  </Link>
+                  </Link>}
                   <Link href={`/dashboard/students/${user.id}`}>
                     <button className={`${styles.button} ${styles.view}`}>
                       View
                     </button>
                   </Link>
-                  <form action={deleteStudent}>
-                    <input type="hidden" name="id" value={(user.id)} />
+                  {role === 'admin' && <form action={deleteStudent}>
+                    <input type="hidden" name="id" value={(user.id)}/>
                     <button className={`${styles.button} ${styles.delete}`}>
                       Delete
                     </button>
-                  </form>
+                  </form>}
                 </div>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <Pagination count={count} />
+      <Pagination count={count}/>
     </div>
   );
 };
 
-export default UsersPage;
+export default StudentsPage;
+
+// const Page = async () => {
+//   const { user } = await auth();
+//   const role = user.role
+//   console.log('newklsdjfkl', role)
+//   switch (role) {
+//     case 'admin':
+//       return <AdminStudentsPage />
+//     case 'teacher':
+//       return "TeacherStudentsPage"
+//   }
+// }
+// export default Page
