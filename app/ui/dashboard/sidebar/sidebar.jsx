@@ -16,7 +16,7 @@ import {
 } from "react-icons/md";
 import { auth, signOut } from "@/app/auth";
 
-const sideBtns = [
+const AdminSideBtns = [
 	{
 		title: "Dashboard",
 		path: "/dashboard",
@@ -33,10 +33,38 @@ const sideBtns = [
 		icon: <MdShoppingBag />,
 	},
 	// {
-	// 	title: "Settings",
-	// 	path: "/dashboard/settings",
-	// 	icon: <MdOutlineSettings />,
+	// 	title: "Exams",
+	// 	path: "/dashboard/exams",
+	// 	icon: <MdAttachMoney />,
 	// },
+	// {
+	// 	title: "Assignments",
+	// 	path: "/dashboard/assignments",
+	// 	icon: <MdAttachMoney />,
+	// },
+	// {
+	// 	title: "Subjects",
+	// 	path: "/dashboard/subjects",
+	// 	icon: <MdAttachMoney />,
+	// },
+	{
+		title: "Events",
+		path: "/dashboard/events",
+		icon: <MdAttachMoney />,
+	},
+]
+const teacherSideBtns = [
+	{
+		title: "Dashboard",
+		path: "/dashboard",
+		icon: <MdDashboard />,
+	},
+	{
+		title: "Students",
+		path: "/dashboard/students",
+		icon: <MdSupervisedUserCircle />,
+	},
+	
 	{
 		title: "Exams",
 		path: "/dashboard/exams",
@@ -45,11 +73,6 @@ const sideBtns = [
 	{
 		title: "Assignments",
 		path: "/dashboard/assignments",
-		icon: <MdAttachMoney />,
-	},
-	{
-		title: "Subjects",
-		path: "/dashboard/subjects",
 		icon: <MdAttachMoney />,
 	},
 	{
@@ -124,8 +147,26 @@ const adminMenuItems = [
 const Sidebar = async () => {
   const { user } = await auth();
 	const role = user.role
+	switch (role) {
+		case "admin":
+			return <Side ArrOfSideBtns={AdminSideBtns} user={user} role={role}/>
+			break;
+		case 'teacher':
+			return <Side ArrOfSideBtns={teacherSideBtns} user={user} role={role}/>
+	
+		default:
+			break;
+	}
   return (
-    <div className={styles.container}>
+    <Side ArrOfSideBtns={teacherSideBtns} user={user} role={role}/>
+  );
+};
+
+export default Sidebar;
+
+const Side = ({ArrOfSideBtns, user, role}) => {
+	return(
+		<div className={styles.container}>
 			{/* <div>{JSON.stringify({user})}</div> */}
       <div className={styles.user}>
         <Image
@@ -141,7 +182,7 @@ const Sidebar = async () => {
         </div>
       </div>
       <ul className={styles.list}>
-				{sideBtns.map(e => (
+				{ArrOfSideBtns.map(e => (
 					<li key={e.title}>
 						<MenuLink item={e} key={e.title} />
 					</li>
@@ -159,7 +200,5 @@ const Sidebar = async () => {
         </button>
       </form>
     </div>
-  );
-};
-
-export default Sidebar;
+	)
+}
