@@ -19,7 +19,7 @@ const StudentDetails = ({ currentStudent, role }) => {
       case "exam":
         return <div><ExamsComponent role={role}/></div>;
       case "assignment":
-        return <div><AssignmentsPage /></div>;
+        return <div><AssignmentsPage role={role} /></div>;
       case "classes":
         return <div><ClassesOrSubjects/></div>;
       // case "medicalRecords":

@@ -1,7 +1,7 @@
 // pages/assignments.js
 import Head from 'next/head';
 
-const AssignmentsPage = () => {
+const AssignmentsPage = ({ role }) => {
 	const assignments = [
 		{
 			id: 1,
@@ -44,7 +44,12 @@ const AssignmentsPage = () => {
 				<title>Assignments | School Management System</title>
 			</Head>
 			<div className="container mx-auto p-4">
-				<h1 className="text-2xl font-bold mb-4">Upcoming Assignments</h1>
+				<div className="flex justify-between items-center mb-4">
+					<h1 className="text-2xl font-bold">Upcoming Assignments</h1>
+					{role === 'teacher' && <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+						Add Assignment
+					</button>}
+				</div>
 				<div className="grid gap-4 md:grid-cols-2">
 					{assignments.map((assignment) => (
 						<div key={assignment.id} className="p-4 border rounded shadow">
@@ -69,6 +74,7 @@ const AssignmentsPage = () => {
 				</div>
 			</div>
 		</div>
+
 	);
 };
 
