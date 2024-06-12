@@ -53,6 +53,71 @@ const AdminSideBtns = [
 		icon: <MdAttachMoney />,
 	},
 ]
+const AllSideBtns = [
+	{
+		title: "Dashboard",
+		path: "/dashboard",
+		icon: <MdDashboard />,
+	},
+	{
+		title: "Students",
+		path: "/dashboard/students",
+		icon: <MdSupervisedUserCircle />,
+	},
+	{
+		title: "Teachers",
+		path: "/dashboard/teachers",
+		icon: <MdShoppingBag />,
+	},
+	{
+		title: "Exams",
+		path: "/dashboard/exams",
+		icon: <MdAttachMoney />,
+	},
+	{
+		title: "Assignments",
+		path: "/dashboard/assignments",
+		icon: <MdAttachMoney />,
+	},
+	{
+		title: "Subjects",
+		path: "/dashboard/subjects",
+		icon: <MdAttachMoney />,
+	},
+	{
+		title: "Events",
+		path: "/dashboard/events",
+		icon: <MdAttachMoney />,
+	},
+]
+const studentSideBtns = [
+	{
+		title: "Dashboard",
+		path: "/dashboard",
+		icon: <MdDashboard />,
+	},
+	
+	{
+		title: "Exams",
+		path: "/dashboard/exams",
+		icon: <MdAttachMoney />,
+	},
+	{
+		title: "Assignments",
+		path: "/dashboard/assignments",
+		icon: <MdAttachMoney />,
+	},
+	{
+		title: "Subjects",
+		path: "/dashboard/subjects",
+		icon: <MdAttachMoney />,
+	},
+	{
+		title: "Events",
+		path: "/dashboard/events",
+		icon: <MdAttachMoney />,
+	},
+]
 const teacherSideBtns = [
 	{
 		title: "Dashboard",
@@ -153,6 +218,8 @@ const Sidebar = async () => {
 			break;
 		case 'teacher':
 			return <Side ArrOfSideBtns={teacherSideBtns} user={user} role={role}/>
+		case 'student':
+			return <Side ArrOfSideBtns={studentSideBtns} user={user} role={role}/>
 	
 		default:
 			break;

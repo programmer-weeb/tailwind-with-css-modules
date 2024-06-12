@@ -56,9 +56,6 @@ export default function ExamsComponent({ role }) {
 	const resources = [
 		{ id: 1, name: 'Mathematics Study Guide', link: '#' },
 		{ id: 2, name: 'Science Notes', link: '#' },
-		{ id: 2, name: 'Science Notes', link: '#' },
-		{ id: 2, name: 'Science Notes', link: '#' },
-		{ id: 2, name: 'Science Notes', link: '#' },
 	];
 	return (
 		<div>
