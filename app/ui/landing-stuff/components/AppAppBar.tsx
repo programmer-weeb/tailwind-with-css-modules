@@ -12,6 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
+import Link from 'next/link';
 
 const logoStyle = {
   width: '140px',
@@ -154,7 +155,9 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                 href="/material-ui/getting-started/templates/sign-in/"
                 target="_blank"
               >
-                Sign in
+                <Link href={'/login'}>
+                  Sign in
+                </Link>
               </Button>
               <Button
                 color="primary"
