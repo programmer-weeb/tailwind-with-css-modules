@@ -1,4 +1,4 @@
-import { Product, StudentModelSchema, User } from "./models/his-models";
+import { LoginModelSchema, Product, StudentModelSchema, User } from "./models/his-models";
 import { connectToDB } from "./utils";
 import { TeacherModelSchema } from './models/teacher-model';
 
@@ -19,6 +19,16 @@ export const fetchUsers = async (q, page) => {
     throw new Error("Failed to fetch users!");
   }
 };
+
+export const getUserByEmail = async (email) => {
+  try {
+    connectToDB()
+    const currentUserByEmail = await LoginModelSchema.find({username: email}).exec()
+    return currentUserByEmail
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 export const fetchStudents = async (q, page) => {
 

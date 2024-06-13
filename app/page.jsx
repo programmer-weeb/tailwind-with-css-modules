@@ -1,5 +1,4 @@
-// TODO
-
+'use client'
 import LandingPage from "./ui/landing-stuff/LandingPage"
 
 const Homepage = () => {
