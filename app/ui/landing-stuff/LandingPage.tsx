@@ -63,7 +63,7 @@ function ToggleCustomTheme({
 }
 
 export default function LandingPage() {
-  const [mode, setMode] = React.useState<PaletteMode>('light');
+  const [mode, setMode] = React.useState<PaletteMode>('dark');
   const [showCustomTheme, setShowCustomTheme] = React.useState(true);
   const LPtheme = createTheme(getLPTheme(mode));
   const defaultTheme = createTheme({ palette: { mode } });
@@ -83,7 +83,7 @@ export default function LandingPage() {
       <Hero />
       <Box sx={{ bgcolor: 'background.default' }}>
         <LogoCollection />
-        <Features />
+        {/* <Features /> */}
         <Divider />
         <Highlights />
         <Divider />
