@@ -11,7 +11,7 @@ import Header from "./Header.jsx";
 function renderEventContent(eventInfo) {
 	return (
 		<>
-			<Header title='DASHBOARD' subTitle='Welcome to you dashboard' />
+			<Header />
 			<b>{eventInfo.timeText}</b>
 			<i>{eventInfo.event.title}</i>
 		</>
@@ -78,40 +78,36 @@ export default function Calender() {
 	}
 
 	return (
-		<Stack direction={'row'}>
-			<Paper className='demo-app-sidebar'>
-				<h2 style={{ textAlign: 'center' }}>
-					All Events ({currentEvents.length})
-				</h2>
-				<ul>{currentEvents.map(renderSidebarEvent)}</ul>
-			</Paper>
+		<Stack direction={'row'} className="bg-gray-900 text-white min-h-screen">
+    <Paper className='demo-app-sidebar bg-gray-800 text-white p-4 rounded'>
+        <h2 className="text-center text-xl">
+            All Events ({currentEvents.length})
+        </h2>
+        <ul>{currentEvents.map(renderSidebarEvent)}</ul>
+    </Paper>
 
-			<div className='demo-app-main'>
-				<FullCalendar
-					plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-					headerToolbar={{
-						left: 'prev,next today',
-						center: 'title',
-						right: 'dayGridMonth,timeGridWeek,timeGridDay',
-					}}
-					initialView='dayGridMonth'
-					editable={true}
-					selectable={true}
-					selectMirror={true}
-					dayMaxEvents={true}
-					weekends={weekendsVisible}
-					// initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
-					select={handleDateSelect}
-					eventContent={renderEventContent} // custom render function
-					eventClick={handleEventClick}
-					eventsSet={handleEvents} // called after events are initialized/added/changed/removed
-					/* you can update a remote database when these fire:
-            eventAdd={function(){}}
-            eventChange={function(){}}
-            eventRemove={function(){}}
-            */
-				/>
-			</div>
-		</Stack>
+    <div className='demo-app-main bg-gray-900 p-4 rounded flex-grow'>
+        <FullCalendar
+            plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+            headerToolbar={{
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay',
+            }}
+            initialView='dayGridMonth'
+            editable={true}
+            selectable={true}
+            selectMirror={true}
+            dayMaxEvents={true}
+            weekends={weekendsVisible}
+            // initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
+            select={handleDateSelect}
+            eventContent={renderEventContent} // custom render function
+            eventClick={handleEventClick}
+            eventsSet={handleEvents}
+        />
+    </div>
+</Stack>
+
 	)
 }
