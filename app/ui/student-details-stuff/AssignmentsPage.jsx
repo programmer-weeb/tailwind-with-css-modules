@@ -17,20 +17,20 @@ const AssignmentsPage = ({ role }) => {
 			dueDate: '2024-06-18',
 			details: 'Prepare a model of the solar system.',
 		},
-		{
-			id: 3,
-			title: 'Math Homework',
-			subject: 'Mathematics',
-			dueDate: '2024-06-15',
-			details: 'Complete exercises 5-10 on page 32.',
-		},
-		{
-			id: 4,
-			title: 'Science Project',
-			subject: 'Science',
-			dueDate: '2024-06-18',
-			details: 'Prepare a model of the solar system.',
-		},
+		// {
+		// 	id: 3,
+		// 	title: 'Math Homework',
+		// 	subject: 'Mathematics',
+		// 	dueDate: '2024-06-15',
+		// 	details: 'Complete exercises 5-10 on page 32.',
+		// },
+		// {
+		// 	id: 4,
+		// 	title: 'Science Project',
+		// 	subject: 'Science',
+		// 	dueDate: '2024-06-18',
+		// 	details: 'Prepare a model of the solar system.',
+		// },
 	];
 
 	const resources = [
