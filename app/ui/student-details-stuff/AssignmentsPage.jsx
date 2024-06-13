@@ -61,7 +61,7 @@ const AssignmentsPage = ({ role }) => {
 					))}
 				</div>
 				<div className="p-4 border rounded shadow mt-4">
-					<h2 className="text-xl font-semibold">Study Materials</h2>
+					<h2 className="text-xl font-semibold">Assignment Materials</h2>
 					<ul>
 						{resources.map((resource) => (
 							<li key={resource.id}>
