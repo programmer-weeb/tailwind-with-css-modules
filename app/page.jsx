@@ -1,7 +1,10 @@
 // TODO
+
+import LandingPage from "./ui/landing-stuff/LandingPage"
+
 const Homepage = () => {
   return (
-    <div>Homepage</div>
+    <div><LandingPage /></div>
   )
 }
 
