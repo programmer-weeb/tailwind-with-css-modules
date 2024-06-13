@@ -6,6 +6,7 @@ import Rightbar from "../ui/dashboard/rightbar/rightbar";
 import Transactions from "../ui/dashboard/transactions/transactions";
 import {auth} from "../auth.js";
 import StudentDashboard from '../ui/myDashboard/StudentDashboard';
+import TeacherDashboard from "../ui/myDashboard/TeacherDashboard.jsx";
 
 const Dashboard = async () => {
 	const { user } = await auth();
@@ -41,10 +42,4 @@ function AdminDashboard() {
       </div>
     </div>
 	);
-}
-
-function TeacherDashboard() {
-	return (
-		<h1>Teacher Dashboard</h1>
-	)
 }
