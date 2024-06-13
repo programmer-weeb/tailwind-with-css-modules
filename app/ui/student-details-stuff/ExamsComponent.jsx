@@ -15,42 +15,7 @@ export default function ExamsComponent({ role }) {
 			date: '2024-06-21',
 			time: '1:00 PM',
 			location: 'Room 102',
-		},
-		{
-			id: 2,
-			subject: 'Science',
-			date: '2024-06-21',
-			time: '1:00 PM',
-			location: 'Room 102',
-		},
-		{
-			id: 2,
-			subject: 'Science',
-			date: '2024-06-21',
-			time: '1:00 PM',
-			location: 'Room 102',
-		},
-		{
-			id: 2,
-			subject: 'Science',
-			date: '2024-06-21',
-			time: '1:00 PM',
-			location: 'Room 102',
-		},
-		{
-			id: 2,
-			subject: 'Science',
-			date: '2024-06-21',
-			time: '1:00 PM',
-			location: 'Room 102',
-		},
-		{
-			id: 2,
-			subject: 'Science',
-			date: '2024-06-21',
-			time: '1:00 PM',
-			location: 'Room 102',
-		},
+		}
 	];
 
 	const resources = [

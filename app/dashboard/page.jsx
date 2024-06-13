@@ -5,6 +5,7 @@ import styles from "../ui/dashboard/dashboard.module.css";
 import Rightbar from "../ui/dashboard/rightbar/rightbar";
 import Transactions from "../ui/dashboard/transactions/transactions";
 import {auth} from "../auth.js";
+import StudentDashboard from '../ui/myDashboard/StudentDashboard';
 
 const Dashboard = async () => {
 	const { user } = await auth();
@@ -45,11 +46,5 @@ function AdminDashboard() {
 function TeacherDashboard() {
 	return (
 		<h1>Teacher Dashboard</h1>
-	)
-}
-
-function StudentDashboard() {
-	return (
-		<h1>Student Dashboard</h1>
 	)
 }
