@@ -25,7 +25,7 @@ const Transactions = () => {
                   height={40}
                   className={styles.userImage}
                 />
-                John Doe
+                Student1
               </div>
             </td>
             <td>
@@ -34,7 +34,7 @@ const Transactions = () => {
               </span>
             </td>
             <td>14.02.2024</td>
-            <td>$3.200</td>
+            <td>$10.200</td>
           </tr>
           <tr>
             <td>
@@ -46,14 +46,14 @@ const Transactions = () => {
                   height={40}
                   className={styles.userImage}
                 />
-                John Doe
+                Student13
               </div>
             </td>
             <td>
               <span className={`${styles.status} ${styles.done}`}>Done</span>
             </td>
             <td>14.02.2024</td>
-            <td>$3.200</td>
+            <td>$10.200</td>
           </tr>
           <tr>
             <td>
@@ -65,7 +65,7 @@ const Transactions = () => {
                   height={40}
                   className={styles.userImage}
                 />
-                John Doe
+                Student16
               </div>
             </td>
             <td>
@@ -74,7 +74,7 @@ const Transactions = () => {
               </span>
             </td>
             <td>14.02.2024</td>
-            <td>$3.200</td>
+            <td>$10.200</td>
           </tr>
           <tr>
             <td>
@@ -86,7 +86,7 @@ const Transactions = () => {
                   height={40}
                   className={styles.userImage}
                 />
-                John Doe
+                Student12
               </div>
             </td>
             <td>
@@ -95,7 +95,7 @@ const Transactions = () => {
               </span>
             </td>
             <td>14.02.2024</td>
-            <td>$3.200</td>
+            <td>$10.200</td>
           </tr>
         </tbody>
       </table>
