@@ -93,14 +93,15 @@ export const updateStudent = async (formData) => {
     await StudentModelSchema.findByIdAndUpdate(id, updateFields);
   } catch (err) {
     console.log(err);
-    throw new Error("Failed to update user!");
+    throw new Error("Failed to update student!");
   }
 
   revalidatePath(`/dashboard/students/edit/${id}`);
   redirect(`/dashboard/students/edit/${id}`);
 };
 export const updateTeacher = async (formData) => {
-  const { id, username, email, password, phone, subject, qualification, about, address, experience } = Object.fromEntries(formData);
+  const { id, username, email, password, phone, subject, qualification, about, address, experience, img } = Object.fromEntries(formData);
+  console.log('klsdfjlkdsfjsdflkj ID', id)
 
   try {
     connectToDB()
@@ -113,7 +114,8 @@ export const updateTeacher = async (formData) => {
       qualification,
       about,
       address,
-      experience
+      experience,
+      img
     }
 
     Object.keys(updateFields).forEach(
@@ -123,8 +125,12 @@ export const updateTeacher = async (formData) => {
 
     await TeacherModelSchema.findByIdAndUpdate(id, updateFields);
   } catch (error) {
-    
+    console.log(err);
+    throw new Error("Failed to update student!");
   }
+  revalidatePath(`/dashboard/teachers/edit/${id}`);
+  redirect(`/dashboard/teachers/edit/${id}`);
+
 };
 
 export const addProduct = async (formData) => {

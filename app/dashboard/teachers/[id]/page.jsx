@@ -1,9 +1,10 @@
 // "use client";
 
-import {fetchTeacher} from "../../../lib/data.js";
+import { fetchTeacher } from "../../../lib/data.js";
 import React from "react";
+import Image from "next/image";
 
-const TeacherDetails = async ({params}) => {
+const TeacherDetails = async ({ params }) => {
 
 	const teacherId = params.id;
 	const teacher = await fetchTeacher(teacherId);
@@ -14,12 +15,11 @@ const TeacherDetails = async ({params}) => {
 				<header className="w-full flex justify-between items-center mb-10">
 					<h2 className="text-3xl font-semibold text-white">Teacher Details</h2>
 					<div className="flex items-center space-x-4">
-						
+
 						<div className="flex items-center space-x-2">
 							<button className="p-2 bg-gray-800 rounded">🔔</button>
 							<div className="p-2 bg-gray-800 rounded flex items-center space-x-2">
 								<span>{teacher.username}</span>
-								<span>Admin</span>
 							</div>
 						</div>
 					</div>
@@ -27,7 +27,14 @@ const TeacherDetails = async ({params}) => {
 				<main className="w-full grid grid-cols-3 gap-6">
 					<div className="col-span-2 bg-gray-800 p-6 rounded-lg shadow w-full">
 						<div className="flex items-center space-x-4 mb-6">
-							<div className="w-24 h-24 rounded-full bg-purple-400"></div>
+							{/* <div className="w-24 h-24 rounded-full bg-purple-400"> */}
+								<Image
+									src={teacher.img || "/noavatar.png"}
+									alt=""
+									width={100}
+									height={100}
+								/>
+							{/* </div> */}
 							<div>
 								<h3 className="text-2xl font-semibold text-white">
 									{/* Maria Historia */}

@@ -19,8 +19,10 @@ const SingleTeacherEditPage = async ({ params }) => {
       </div>
       <div className={styles.formContainer}>
         <form action={updateTeacher} className={styles.form}>
-				<input type="text" placeholder={`${teacher.username}`} name="username" required />
-        <input type="email" placeholder={`${teacher.email}`} name="email" required />
+				<input type="hidden" name="id" value={teacher.id}/>
+				<label>Username</label>
+				<input type="text" placeholder={`${teacher.username}`} name="username"  />
+        <input type="email" placeholder={`${teacher.email}`} name="email"  />
         <input type="phone" placeholder={`${teacher.phone}`} name="phone" />
         <input type="text" placeholder={`${teacher.subject}`} name="subject" />
 
@@ -48,6 +50,9 @@ const SingleTeacherEditPage = async ({ params }) => {
           rows="4"
           placeholder={`${teacher.address}`}
         ></textarea>
+
+				<label>image</label>
+				<input type="text" name="img" placeholder={'put url'}/>
           
           <button>Update</button>
         </form>
