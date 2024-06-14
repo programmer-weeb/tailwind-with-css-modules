@@ -37,6 +37,9 @@ const SingleStudentPage = async ({ params }) => {
 					<label>Parent Phone</label>
 					<input type="text" name="parentPhone" placeholder={student.parentPhone}/>
 
+					<label>image</label>
+					<input type="text" name="image" placeholder={'put url'}/>
+
 					<button>Update</button>
 				</form>
 			</div>
