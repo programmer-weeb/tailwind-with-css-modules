@@ -3,11 +3,11 @@ import { fetchStudent, fetchTeacher } from "@/app/lib/data";
 import styles from "@/app/ui/dashboard/users/singleUser/singleUser.module.css";
 import Image from "next/image";
 
-const SingleUserPage = async ({ params }) => {
+const SingleTeacherEditPage = async ({ params }) => {
   
   const { id } = params;
   const teacher = await fetchTeacher(id);
-	console.log(teacher)
+	console.log("SingleTeacherEditPage", teacher)
 
   return (
     <div className={styles.container}>
@@ -56,4 +56,4 @@ const SingleUserPage = async ({ params }) => {
   );
 };
 
-export default SingleUserPage;
+export default SingleTeacherEditPage;

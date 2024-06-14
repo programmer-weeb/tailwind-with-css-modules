@@ -7,7 +7,7 @@ const SingleStudentPage = async ({ params }) => {
   
   const { id } = params;
   const student = await fetchStudent(id);
-	console.log(student);
+	console.log("SingleStudentPage", student);
 
   return (
     <div className={styles.container}>
