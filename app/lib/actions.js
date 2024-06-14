@@ -101,7 +101,6 @@ export const updateStudent = async (formData) => {
 };
 export const updateTeacher = async (formData) => {
   const { id, username, email, password, phone, subject, qualification, about, address, experience, img } = Object.fromEntries(formData);
-  console.log('klsdfjlkdsfjsdflkj ID', id)
 
   try {
     connectToDB()
