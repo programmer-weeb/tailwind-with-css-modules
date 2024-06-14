@@ -6,6 +6,8 @@ import BusLocation from "../../../ui/student-details-stuff/BusLocation.jsx";
 import ExamsComponent from "../../../ui/student-details-stuff/ExamsComponent.jsx";
 import AssignmentsPage from "../../../ui/student-details-stuff/AssignmentsPage.jsx";
 import ClassesOrSubjects from "../../../ui/student-details-stuff/ClassesOrSubjects.jsx";
+import Image from "next/image";
+
 const StudentDetails = ({ currentStudent, role }) => {
 
   const [activeTab, setActiveTab] = useState("assignment");
@@ -52,7 +54,14 @@ const StudentDetails = ({ currentStudent, role }) => {
       <main className="w-full grid grid-cols-3 gap-6">
         <div className="col-span-2 bg-gray-800 p-6 rounded-lg shadow w-full">
           <div className="flex items-center space-x-4 mb-6">
-            <div className="w-24 h-24 rounded-full bg-purple-400"></div>
+            {/* <div className="w-24 h-24 rounded-full bg-purple-400"> */}
+              <Image
+                src={currentStudent.img || "/noavatar.png"}
+                alt=""
+                width={100}
+                height={100}
+              />
+            {/* </div> */}
             <div>
               <h3 className="text-2xl font-semibold text-white">
                 {currentStudent.username}
