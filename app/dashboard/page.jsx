@@ -7,6 +7,7 @@ import Transactions from "../ui/dashboard/transactions/transactions";
 import {auth} from "../auth.js";
 import StudentDashboard from '../ui/myDashboard/StudentDashboard';
 import TeacherDashboard from "../ui/myDashboard/TeacherDashboard.jsx";
+import AdminDashboard from '../ui/myDashboard/AdminDashboard';
 
 const Dashboard = async () => {
 	const { user } = await auth();
@@ -24,22 +25,3 @@ const Dashboard = async () => {
 };
 
 export default Dashboard;
-
-function AdminDashboard() {
-	return (
-		<div className={styles.wrapper}>
-      <div className={styles.main}>
-        <div className={styles.cards}>
-          {cards.map((item) => (
-            <Card item={item} key={item.id} />
-          ))}
-        </div>
-        <Transactions />
-        <Chart />
-      </div>
-      <div className={styles.side}>
-        <Rightbar />
-      </div>
-    </div>
-	);
-}
