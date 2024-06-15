@@ -1,4 +1,4 @@
-import { updateTeacher, updateUser } from "@/app/lib/actions";
+import { updateTeacher } from "@/app/lib/actions";
 import { fetchStudent, fetchTeacher } from "@/app/lib/data";
 import styles from "@/app/ui/dashboard/users/singleUser/singleUser.module.css";
 import Image from "next/image";
