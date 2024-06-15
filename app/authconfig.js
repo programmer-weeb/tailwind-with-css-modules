@@ -1,7 +1,7 @@
 // import { getUserByEmail } from "./lib/data";
 // const {getUserByEmail} = require('./lib/data')
 export const authConfig = {
-  providers:[],
+  providers: [],
   pages: {
     signIn: "/login",
   },

@@ -5,7 +5,7 @@ import Search from "@/app/ui/dashboard/search/search";
 import styles from "@/app/ui/dashboard/users/users.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import {auth} from "../../auth.js";
+import { auth } from "../../auth.js";
 
 const StudentsPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
@@ -29,7 +29,7 @@ const StudentsPage = async ({ searchParams }) => {
           <tr>
             <td>Name</td>
             <td>Email</td>
-            {role === 'admin' &&<td>Created At</td>}
+            {role === 'admin' && <td>Created At</td>}
             {/* <td>Role</td>
             <td>Status</td> */}
             <td>Action</td>
@@ -51,7 +51,7 @@ const StudentsPage = async ({ searchParams }) => {
                 </div>
               </td>
               <td>{user.email}</td>
-              {role === 'admin' &&<td>{user.createdAt?.toString().slice(4, 16)}</td>}
+              {role === 'admin' && <td>{user.createdAt?.toString().slice(4, 16)}</td>}
               {/* <td>{user.isAdmin ? "Admin" : "Client"}</td> */}
               {/* <td>{user.isActive ? "active" : "passive"}</td> */}
               <td>
@@ -67,7 +67,7 @@ const StudentsPage = async ({ searchParams }) => {
                     </button>
                   </Link>
                   {role === 'admin' && <form action={deleteStudent}>
-                    <input type="hidden" name="id" value={(user.id)}/>
+                    <input type="hidden" name="id" value={(user.id)} />
                     <button className={`${styles.button} ${styles.delete}`}>
                       Delete
                     </button>
@@ -78,7 +78,7 @@ const StudentsPage = async ({ searchParams }) => {
           ))}
         </tbody>
       </table>
-      <Pagination count={count}/>
+      <Pagination count={count} />
     </div>
   );
 };

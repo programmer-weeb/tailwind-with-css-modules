@@ -17,134 +17,134 @@ import {
 import { auth, signOut } from "@/app/auth";
 
 const AdminSideBtns = [
-	{
-		title: "Dashboard",
-		path: "/dashboard",
-		icon: <MdDashboard />,
-	},
-	{
-		title: "Students",
-		path: "/dashboard/students",
-		icon: <MdSupervisedUserCircle />,
-	},
-	{
-		title: "Teachers",
-		path: "/dashboard/teachers",
-		icon: <MdShoppingBag />,
-	},
-	// {
-	// 	title: "Exams",
-	// 	path: "/dashboard/exams",
-	// 	icon: <MdAttachMoney />,
-	// },
-	// {
-	// 	title: "Assignments",
-	// 	path: "/dashboard/assignments",
-	// 	icon: <MdAttachMoney />,
-	// },
-	// {
-	// 	title: "Subjects",
-	// 	path: "/dashboard/subjects",
-	// 	icon: <MdAttachMoney />,
-	// },
-	{
-		title: "Events",
-		path: "/dashboard/events",
-		icon: <MdAttachMoney />,
-	},
+  {
+    title: "Dashboard",
+    path: "/dashboard",
+    icon: <MdDashboard />,
+  },
+  {
+    title: "Students",
+    path: "/dashboard/students",
+    icon: <MdSupervisedUserCircle />,
+  },
+  {
+    title: "Teachers",
+    path: "/dashboard/teachers",
+    icon: <MdShoppingBag />,
+  },
+  // {
+  // 	title: "Exams",
+  // 	path: "/dashboard/exams",
+  // 	icon: <MdAttachMoney />,
+  // },
+  // {
+  // 	title: "Assignments",
+  // 	path: "/dashboard/assignments",
+  // 	icon: <MdAttachMoney />,
+  // },
+  // {
+  // 	title: "Subjects",
+  // 	path: "/dashboard/subjects",
+  // 	icon: <MdAttachMoney />,
+  // },
+  {
+    title: "Events",
+    path: "/dashboard/events",
+    icon: <MdAttachMoney />,
+  },
 ]
 const AllSideBtns = [
-	{
-		title: "Dashboard",
-		path: "/dashboard",
-		icon: <MdDashboard />,
-	},
-	{
-		title: "Students",
-		path: "/dashboard/students",
-		icon: <MdSupervisedUserCircle />,
-	},
-	{
-		title: "Teachers",
-		path: "/dashboard/teachers",
-		icon: <MdShoppingBag />,
-	},
-	{
-		title: "Exams",
-		path: "/dashboard/exams",
-		icon: <MdAttachMoney />,
-	},
-	{
-		title: "Assignments",
-		path: "/dashboard/assignments",
-		icon: <MdAttachMoney />,
-	},
-	{
-		title: "Subjects",
-		path: "/dashboard/subjects",
-		icon: <MdAttachMoney />,
-	},
-	{
-		title: "Events",
-		path: "/dashboard/events",
-		icon: <MdAttachMoney />,
-	},
+  {
+    title: "Dashboard",
+    path: "/dashboard",
+    icon: <MdDashboard />,
+  },
+  {
+    title: "Students",
+    path: "/dashboard/students",
+    icon: <MdSupervisedUserCircle />,
+  },
+  {
+    title: "Teachers",
+    path: "/dashboard/teachers",
+    icon: <MdShoppingBag />,
+  },
+  {
+    title: "Exams",
+    path: "/dashboard/exams",
+    icon: <MdAttachMoney />,
+  },
+  {
+    title: "Assignments",
+    path: "/dashboard/assignments",
+    icon: <MdAttachMoney />,
+  },
+  {
+    title: "Subjects",
+    path: "/dashboard/subjects",
+    icon: <MdAttachMoney />,
+  },
+  {
+    title: "Events",
+    path: "/dashboard/events",
+    icon: <MdAttachMoney />,
+  },
 ]
 const studentSideBtns = [
-	{
-		title: "Dashboard",
-		path: "/dashboard",
-		icon: <MdDashboard />,
-	},
-	
-	{
-		title: "Exams",
-		path: "/dashboard/exams",
-		icon: <MdAttachMoney />,
-	},
-	{
-		title: "Assignments",
-		path: "/dashboard/assignments",
-		icon: <MdAttachMoney />,
-	},
-	{
-		title: "Subjects",
-		path: "/dashboard/subjects",
-		icon: <MdAttachMoney />,
-	},
-	{
-		title: "Events",
-		path: "/dashboard/events",
-		icon: <MdAttachMoney />,
-	},
+  {
+    title: "Dashboard",
+    path: "/dashboard",
+    icon: <MdDashboard />,
+  },
+
+  {
+    title: "Exams",
+    path: "/dashboard/exams",
+    icon: <MdAttachMoney />,
+  },
+  {
+    title: "Assignments",
+    path: "/dashboard/assignments",
+    icon: <MdAttachMoney />,
+  },
+  {
+    title: "Subjects",
+    path: "/dashboard/subjects",
+    icon: <MdAttachMoney />,
+  },
+  {
+    title: "Events",
+    path: "/dashboard/events",
+    icon: <MdAttachMoney />,
+  },
 ]
 const teacherSideBtns = [
-	{
-		title: "Dashboard",
-		path: "/dashboard",
-		icon: <MdDashboard />,
-	},
-	{
-		title: "Students",
-		path: "/dashboard/students",
-		icon: <MdSupervisedUserCircle />,
-	},
-	
-	{
-		title: "Exams",
-		path: "/dashboard/exams",
-		icon: <MdAttachMoney />,
-	},
-	{
-		title: "Assignments",
-		path: "/dashboard/assignments",
-		icon: <MdAttachMoney />,
-	},
-	{
-		title: "Events",
-		path: "/dashboard/events",
-		icon: <MdAttachMoney />,
-	},
+  {
+    title: "Dashboard",
+    path: "/dashboard",
+    icon: <MdDashboard />,
+  },
+  {
+    title: "Students",
+    path: "/dashboard/students",
+    icon: <MdSupervisedUserCircle />,
+  },
+
+  {
+    title: "Exams",
+    path: "/dashboard/exams",
+    icon: <MdAttachMoney />,
+  },
+  {
+    title: "Assignments",
+    path: "/dashboard/assignments",
+    icon: <MdAttachMoney />,
+  },
+  {
+    title: "Events",
+    path: "/dashboard/events",
+    icon: <MdAttachMoney />,
+  },
 ]
 const adminMenuItems = [
   {
@@ -211,30 +211,30 @@ const adminMenuItems = [
 
 const Sidebar = async () => {
   const { user } = await auth();
-	const role = user.role
-	switch (role) {
-		case "admin":
-			return <Side ArrOfSideBtns={AdminSideBtns} user={user} role={role}/>
-			break;
-		case 'teacher':
-			return <Side ArrOfSideBtns={teacherSideBtns} user={user} role={role}/>
-		case 'student':
-			return <Side ArrOfSideBtns={studentSideBtns} user={user} role={role}/>
-	
-		default:
-			break;
-	}
+  const role = user.role
+  switch (role) {
+    case "admin":
+      return <Side ArrOfSideBtns={AdminSideBtns} user={user} role={role} />
+      break;
+    case 'teacher':
+      return <Side ArrOfSideBtns={teacherSideBtns} user={user} role={role} />
+    case 'student':
+      return <Side ArrOfSideBtns={studentSideBtns} user={user} role={role} />
+
+    default:
+      break;
+  }
   return (
-    <Side ArrOfSideBtns={teacherSideBtns} user={user} role={role}/>
+    <Side ArrOfSideBtns={teacherSideBtns} user={user} role={role} />
   );
 };
 
 export default Sidebar;
 
-const Side = ({ArrOfSideBtns, user, role}) => {
-	return(
-		<div className={styles.container}>
-			{/* <div>{JSON.stringify({user})}</div> */}
+const Side = ({ ArrOfSideBtns, user, role }) => {
+  return (
+    <div className={styles.container}>
+      {/* <div>{JSON.stringify({user})}</div> */}
       <div className={styles.user}>
         <Image
           className={styles.userImage}
@@ -249,11 +249,11 @@ const Side = ({ArrOfSideBtns, user, role}) => {
         </div>
       </div>
       <ul className={styles.list}>
-				{ArrOfSideBtns.map(e => (
-					<li key={e.title}>
-						<MenuLink item={e} key={e.title} />
-					</li>
-				))}        
+        {ArrOfSideBtns.map(e => (
+          <li key={e.title}>
+            <MenuLink item={e} key={e.title} />
+          </li>
+        ))}
       </ul>
       <form
         action={async () => {
@@ -267,5 +267,5 @@ const Side = ({ArrOfSideBtns, user, role}) => {
         </button>
       </form>
     </div>
-	)
+  )
 }

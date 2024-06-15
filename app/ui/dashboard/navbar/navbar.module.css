@@ -34,7 +34,7 @@
   color: var(--text);
 }
 
-.icons{
+.icons {
   display: flex;
   gap: 20px;
 }

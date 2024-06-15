@@ -4,7 +4,7 @@ import styles from "@/app/ui/dashboard/users/singleUser/singleUser.module.css";
 import Image from "next/image";
 
 const SingleUserPage = async ({ params }) => {
-  
+
   const { id } = params;
   const user = await fetchUser(id);
 
@@ -18,7 +18,7 @@ const SingleUserPage = async ({ params }) => {
       </div>
       <div className={styles.formContainer}>
         <form action={updateUser} className={styles.form}>
-          <input type="hidden" name="id" value={user.id}/>
+          <input type="hidden" name="id" value={user.id} />
           <label>Username</label>
           <input type="text" name="username" placeholder={user.username} />
           <label>Email</label>

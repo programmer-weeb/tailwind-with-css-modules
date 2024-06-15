@@ -15,10 +15,10 @@ const AddStudentPage = () => {
         />
         <input type="phone" placeholder="phone" name="phone" />
 
-				<input type="text" placeholder="parentName" name="parentName" required />
+        <input type="text" placeholder="parentName" name="parentName" required />
         <input type="text" placeholder="parentEmail" name="parentEmail" required />
         <input type="text" placeholder="parentPhone" name="parentPhone" required />
-				<input type="text" name="image" id="studentImg" placeholder="img: put URL"/>
+        <input type="text" name="image" id="studentImg" placeholder="img: put URL" />
 
         <textarea
           name="address"

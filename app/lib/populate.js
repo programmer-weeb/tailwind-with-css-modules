@@ -1,7 +1,7 @@
-import {connectToDB} from "./utils.js";
+import { connectToDB } from "./utils.js";
 import bcrypt from "bcrypt";
-import {LoginModelSchema, StudentModelSchema} from "./models/his-models.js";
-import {TeacherModelSchema} from "./models/teacher-model.js";
+import { LoginModelSchema, StudentModelSchema } from "./models/his-models.js";
+import { TeacherModelSchema } from "./models/teacher-model.js";
 
 // addStudent({
 //   username: 'student16',
@@ -49,7 +49,7 @@ import {TeacherModelSchema} from "./models/teacher-model.js";
 })();
 
 async function addStudent(studentData) {
-  const { username, email, password, parentEmail, parentName, parentPhone, medicalRecords } = {...studentData}
+  const { username, email, password, parentEmail, parentName, parentPhone, medicalRecords } = { ...studentData }
 
   try {
     await connectToDB();
@@ -57,7 +57,7 @@ async function addStudent(studentData) {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    const newUser = new StudentModelSchema ({
+    const newUser = new StudentModelSchema({
       username,
       email,
       password: hashedPassword,
@@ -70,15 +70,15 @@ async function addStudent(studentData) {
     console.log({
       newUser
     })
-  }catch (err) {
+  } catch (err) {
     console.log(err);
     throw new Error("Failed to create user!");
   }
-  
+
 }
 
 async function addTeacher(teacherData) {
-  const { username, email, password, phone, address, subject, qualification, experience, about } = {...teacherData}
+  const { username, email, password, phone, address, subject, qualification, experience, about } = { ...teacherData }
 
   try {
     await connectToDB();
@@ -86,7 +86,7 @@ async function addTeacher(teacherData) {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    const newUser = new  TeacherModelSchema({
+    const newUser = new TeacherModelSchema({
       username, email, password: hashedPassword, phone, address, subject, qualification, experience, about
     });
 
@@ -95,15 +95,15 @@ async function addTeacher(teacherData) {
     console.log({
       newUser
     })
-  }catch (err) {
+  } catch (err) {
     console.log(err);
     throw new Error("Failed to create user!");
   }
-  
+
 }
 
-async function addUserWithLoginSchema(userData)  {
-  const { username, email, password, role } = {...userData}
+async function addUserWithLoginSchema(userData) {
+  const { username, email, password, role } = { ...userData }
   try {
     await connectToDB();
 
@@ -122,7 +122,7 @@ async function addUserWithLoginSchema(userData)  {
     console.log({
       newUser
     })
-  }catch (err) {
+  } catch (err) {
     console.log(err);
     throw new Error("Failed to create user!");
   }

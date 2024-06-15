@@ -6,8 +6,8 @@ import styles from "../dashboard/dashboard.module.css";
 import { cards } from "@/app/lib/data";
 
 export default function AdminDashboard() {
-	return (
-		<div className={styles.wrapper}>
+  return (
+    <div className={styles.wrapper}>
       <div className={styles.main}>
         <div className={styles.cards}>
           {cards.map((item) => (
@@ -21,5 +21,5 @@ export default function AdminDashboard() {
         <Rightbar />
       </div>
     </div>
-	);
+  );
 }

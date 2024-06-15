@@ -36,8 +36,8 @@ const studentSchema = new mongoose.Schema({
     type: String,
     // required: true,
   }
-    
-}, {timestamps: true})
+
+}, { timestamps: true })
 
 const loginSchema = new mongoose.Schema({
   username: {

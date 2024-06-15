@@ -19,11 +19,11 @@ const StudentDetails = ({ currentStudent, role }) => {
       // case "quiz":
       //   return <div>Quiz Content</div>;
       case "exam":
-        return <div><ExamsComponent role={role}/></div>;
+        return <div><ExamsComponent role={role} /></div>;
       case "assignment":
         return <div><AssignmentsPage role={role} /></div>;
       case "classes":
-        return <div><ClassesOrSubjects/></div>;
+        return <div><ClassesOrSubjects /></div>;
       // case "medicalRecords":
       //   return <div>Medical Records Content</div>;
       case "busLocation":
@@ -39,10 +39,10 @@ const StudentDetails = ({ currentStudent, role }) => {
         <h2 className="text-3xl font-semibold text-white">Student Details</h2>
         <div className="flex items-center space-x-4">
           {/* <input
-						type="text"
-						placeholder="Search here..."
-						className="p-2 rounded bg-gray-800 text-gray-300"
-					/> */}
+            type="text"
+            placeholder="Search here..."
+            className="p-2 rounded bg-gray-800 text-gray-300"
+          /> */}
           <div className="flex items-center space-x-2">
             <button className="p-2 bg-gray-800 rounded">🔔</button>
             <div className="p-2 bg-gray-800 rounded flex items-center space-x-2">
@@ -55,12 +55,12 @@ const StudentDetails = ({ currentStudent, role }) => {
         <div className="col-span-2 bg-gray-800 p-6 rounded-lg shadow w-full">
           <div className="flex items-center space-x-4 mb-6">
             {/* <div className="w-24 h-24 rounded-full bg-purple-400"> */}
-              <Image
-                src={currentStudent.img || "/noavatar.png"}
-                alt=""
-                width={100}
-                height={100}
-              />
+            <Image
+              src={currentStudent.img || "/noavatar.png"}
+              alt=""
+              width={100}
+              height={100}
+            />
             {/* </div> */}
             <div>
               <h3 className="text-2xl font-semibold text-white">
@@ -184,31 +184,28 @@ const StudentDetails = ({ currentStudent, role }) => {
           </button> */}
           <button
             onClick={() => setActiveTab("exam")}
-            className={`p-2 border rounded ${
-              activeTab === "exam"
+            className={`p-2 border rounded ${activeTab === "exam"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-700 text-white"
-            }`}
+              }`}
           >
             Exams
           </button>
           <button
             onClick={() => setActiveTab("assignment")}
-            className={`p-2 border rounded ${
-              activeTab === "assignment"
+            className={`p-2 border rounded ${activeTab === "assignment"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-700 text-white"
-            }`}
+              }`}
           >
             Assignment
           </button>
           <button
             onClick={() => setActiveTab("classes")}
-            className={`p-2 border rounded ${
-              activeTab === "classes"
+            className={`p-2 border rounded ${activeTab === "classes"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-700 text-white"
-            }`}
+              }`}
           >
             Classes
           </button>
@@ -224,11 +221,10 @@ const StudentDetails = ({ currentStudent, role }) => {
           </button> */}
           <button
             onClick={() => setActiveTab("busLocation")}
-            className={`p-2 border rounded ${
-              activeTab === "busLocation"
+            className={`p-2 border rounded ${activeTab === "busLocation"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-700 text-white"
-            }`}
+              }`}
           >
             Bus Location
           </button>

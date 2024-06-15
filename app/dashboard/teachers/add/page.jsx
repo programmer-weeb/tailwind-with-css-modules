@@ -5,7 +5,7 @@ const AddTeacherPage = () => {
   return (
     <div className={styles.container}>
       <form action={addTeacher} className={styles.form}>
-				<input type="text" placeholder="username" name="username" required />
+        <input type="text" placeholder="username" name="username" required />
         <input type="email" placeholder="email" name="email" required />
         <input
           type="password"
@@ -16,25 +16,25 @@ const AddTeacherPage = () => {
         <input type="phone" placeholder="phone" name="phone" />
         <input type="text" placeholder="subject" name="subject" />
 
-				<textarea
+        <textarea
           name="qualification"
           id="qualification"
           rows="4"
           placeholder="Qualification"
         ></textarea>
-				<textarea
+        <textarea
           name="experience"
           id="experience"
           rows="4"
           placeholder="Experience"
         ></textarea>
-				<textarea
+        <textarea
           name="about"
           id="about"
           rows="4"
           placeholder="About"
         ></textarea>
-				<textarea
+        <textarea
           name="address"
           id="address"
           rows="4"
