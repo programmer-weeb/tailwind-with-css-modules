@@ -66,7 +66,7 @@ const StudentDetails = ({ currentStudent, role }) => {
               <h3 className="text-2xl font-semibold text-white">
                 {currentStudent.username}
               </h3>
-              <p className="text-gray-400">History Teacher</p>
+              {/* <p className="text-gray-400">History Teacher</p> */}
             </div>
           </div>
           <div className="flex items-center space-x-8 mb-6">
