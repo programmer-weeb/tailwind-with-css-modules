@@ -1,4 +1,4 @@
-import { LoginModelSchema, Product, StudentModelSchema, User } from "./models/his-models";
+import { LoginModelSchema, Product, StudentModelSchema } from "./models/his-models";
 import { connectToDB } from "./utils";
 import { TeacherModelSchema } from './models/teacher-model';
 
