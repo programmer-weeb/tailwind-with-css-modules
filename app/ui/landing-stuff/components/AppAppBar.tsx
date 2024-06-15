@@ -15,9 +15,10 @@ import ToggleColorMode from './ToggleColorMode';
 import Link from 'next/link';
 
 const logoStyle = {
-  width: '140px',
-  height: 'auto',
+  width: 'auto',
+  height: '40px',
   cursor: 'pointer',
+  borderRadius: '999px',
 };
 
 interface AppAppBarProps {
@@ -91,7 +92,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
             >
               <img
                 src={
-                  'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
+                  'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.MAyw00v30GED97zkH5bxJAHaF0%26pid%3DApi&f=1&ipt=26d8d88a1637fc443effdee9660da67b7cd5996d41fd5afd26ede9929c437c49&ipo=images'
                 }
                 style={logoStyle}
                 alt="logo of sitemark"
