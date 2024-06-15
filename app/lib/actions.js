@@ -101,32 +101,6 @@ export const updateTeacher = async (formData) => {
 
 };
 
-export const addProduct = async (formData) => {
-  const { title, desc, price, stock, color, size } =
-    Object.fromEntries(formData);
-
-  try {
-    connectToDB();
-
-    const newProduct = new Product({
-      title,
-      desc,
-      price,
-      stock,
-      color,
-      size,
-    });
-
-    await newProduct.save();
-  } catch (err) {
-    console.log(err);
-    throw new Error("Failed to create product!");
-  }
-
-  revalidatePath("/dashboard/teachers");
-  redirect("/dashboard/teachers");
-};
-
 export const updateProduct = async (formData) => {
   const { id, title, desc, price, stock, color, size } =
     Object.fromEntries(formData);
