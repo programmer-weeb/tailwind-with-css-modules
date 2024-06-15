@@ -2,34 +2,6 @@ import { LoginModelSchema, Product, StudentModelSchema, User } from "./models/hi
 import { connectToDB } from "./utils";
 import { TeacherModelSchema } from './models/teacher-model';
 
-export const fetchUsers = async (q, page) => {
-  const regex = new RegExp(q, "i");
-
-  const ITEM_PER_PAGE = 10;
-
-  try {
-    connectToDB();
-    const count = await StudentModelSchema.find({ username: { $regex: regex } }).count();
-    const users = await StudentModelSchema.find({ username: { $regex: regex } })
-      .limit(ITEM_PER_PAGE)
-      .skip(ITEM_PER_PAGE * (page - 1));
-    return { count, users };
-  } catch (err) {
-    console.log(err);
-    throw new Error("Failed to fetch users!");
-  }
-};
-
-export const getUserByEmail = async (email) => {
-  try {
-    connectToDB()
-    const currentUserByEmail = await LoginModelSchema.find({username: email}).exec()
-    return currentUserByEmail
-  } catch (error) {
-    console.log(error)
-  }
-}
-
 export const fetchStudents = async (q, page) => {
 
   const regex = new RegExp(q, "i");
@@ -73,24 +45,6 @@ export const fetchTeacher = async (id) => {
   }
 };
 
-export const fetchProducts = async (q, page) => {
-  console.log(q);
-  const regex = new RegExp(q, "i");
-
-  const ITEM_PER_PAGE = 10;
-
-  try {
-    connectToDB();
-    const count = await Product.find({ title: { $regex: regex } }).count();
-    const products = await Product.find({ title: { $regex: regex } })
-      .limit(ITEM_PER_PAGE)
-      .skip(ITEM_PER_PAGE * (page - 1));
-    return { count, products };
-  } catch (err) {
-    console.log(err);
-    throw new Error("Failed to fetch products!");
-  }
-};
 export const fetchTeachers = async (q, page) => {
 
   const regex = new RegExp(q, "i");
@@ -110,17 +64,6 @@ export const fetchTeachers = async (q, page) => {
   }
 
 }
-
-export const fetchProduct = async (id) => {
-  try {
-    connectToDB();
-    const product = await Product.findById(id);
-    return product;
-  } catch (err) {
-    console.log(err);
-    throw new Error("Failed to fetch product!");
-  }
-};
 
 // DUMMY DATA
 
