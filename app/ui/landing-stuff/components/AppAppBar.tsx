@@ -90,13 +90,13 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                 px: 0,
               }}
             >
-              <img
+              {/* <img
                 src={
                   'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.MAyw00v30GED97zkH5bxJAHaF0%26pid%3DApi&f=1&ipt=26d8d88a1637fc443effdee9660da67b7cd5996d41fd5afd26ede9929c437c49&ipo=images'
                 }
                 style={logoStyle}
                 alt="logo of sitemark"
-              />
+              /> */}
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                 <MenuItem
                   onClick={() => scrollToSection('features')}
