@@ -15,45 +15,55 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 
 const tiers = [
   {
-    title: 'Free',
+    title: 'Basic',
     price: '0',
     description: [
-      '10 users included',
-      '2 GB of storage',
-      'Help center access',
+      'Up to 100 students',
+      '5 GB of storage',
+      'Basic help center access',
       'Email support',
+      'Access to grade book',
     ],
-    buttonText: 'Sign up for free',
+    buttonText: 'Get Started',
     buttonVariant: 'outlined',
   },
   {
-    title: 'Professional',
-    subheader: 'Recommended',
-    price: '15',
+    title: 'Standard',
+    subheader: 'Popular',
+    price: '50',
     description: [
-      '20 users included',
-      '10 GB of storage',
-      'Help center access',
+      'Up to 500 students',
+      '50 GB of storage',
+      'Enhanced help center access',
       'Priority email support',
-      'Dedicated team',
-      'Best deals',
+      'Student and staff management',
+      'Attendance tracking',
+      'Access to grade book',
+      'Parent portal access',
     ],
-    buttonText: 'Start now',
+    buttonText: 'Upgrade Now',
     buttonVariant: 'contained',
   },
   {
-    title: 'Enterprise',
-    price: '30',
+    title: 'Premium',
+    price: '100',
     description: [
-      '50 users included',
-      '30 GB of storage',
-      'Help center access',
+      'Unlimited students',
+      '200 GB of storage',
+      'Full help center access',
       'Phone & email support',
+      'Student and staff management',
+      'Attendance tracking',
+      'Advanced reporting',
+      'Parent portal access',
+      'Customizable dashboards',
+      'Integration with third-party tools',
     ],
-    buttonText: 'Contact us',
+    buttonText: 'Contact Sales',
     buttonVariant: 'outlined',
   },
 ];
+
 
 export default function Pricing() {
   return (
@@ -79,11 +89,15 @@ export default function Pricing() {
           Pricing
         </Typography>
         <Typography variant="body1" color="text.secondary">
+          Pricing table for customers . <br />
+          {/* It&apos;s built with default Material UI components with little customization. */}
+        </Typography>
+        {/* <Typography variant="body1" color="text.secondary">
           Quickly build an effective pricing table for your potential customers with
           this layout. <br />
           It&apos;s built with default Material UI components with little
           customization.
-        </Typography>
+        </Typography> */}
       </Box>
       <Grid container spacing={3} alignItems="center" justifyContent="center">
         {tiers.map((tier) => (

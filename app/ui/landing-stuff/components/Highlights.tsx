@@ -18,13 +18,15 @@ const items = [
     icon: <SettingsSuggestRoundedIcon />,
     title: 'Adaptable performance',
     description:
-      'Our product effortlessly adjusts to your needs, boosting efficiency and simplifying your tasks.',
+      'Our product effortlessly adjusts to your needs, boosting efficiency and simplifying tasks.',
   },
   {
     icon: <ConstructionRoundedIcon />,
-    title: 'Built to last',
-    description:
-      'Experience unmatched durability that goes above and beyond with lasting investment.',
+    // title: 'Built to last',
+		title: 'bus location',
+    // description:
+    //   'Experience unmatched durability that goes above and beyond with lasting investment.',
+		description: 'Always Know Where The Bus Is, Experience real-time tracking for the bus'
   },
   {
     icon: <ThumbUpAltRoundedIcon />,
@@ -46,9 +48,11 @@ const items = [
   },
   {
     icon: <QueryStatsRoundedIcon />,
-    title: 'Precision in every detail',
-    description:
-      'Enjoy a meticulously crafted product where small touches make a significant impact on your overall experience.',
+    // title: 'Precision in every detail',
+		title: 'Medical records',
+    // description:
+    //   'Enjoy a meticulously crafted product where small touches make a significant impact on your overall experience.',
+		description: 'Access your medical records, Experience security with a medical record'
   },
 ];
 
