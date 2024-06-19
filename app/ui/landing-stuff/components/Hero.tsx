@@ -53,7 +53,7 @@ export default function Hero() {
                   theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
               }}
             >
-              products
+              Features
             </Typography>
           </Typography>
           <Typography
